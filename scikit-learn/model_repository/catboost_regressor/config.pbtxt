@@ -1,0 +1,23 @@
+name: "catboost_regressor"
+backend: "onnxruntime"
+max_batch_size: 0
+input [
+  {
+    name: "features"
+    data_type: TYPE_FP32
+    dims: [ -1, 8 ]
+  }
+]
+output [
+  {
+    name: "predictions"
+    data_type: TYPE_FP32
+    dims: [ -1 ]
+  }
+]
+instance_group [
+  {
+    count: 1
+    kind: KIND_CPU
+  }
+]

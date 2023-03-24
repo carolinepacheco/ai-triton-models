@@ -1,0 +1,23 @@
+name: "random_forest_regressor"
+backend: "onnxruntime"
+max_batch_size: 0
+input [
+  {
+    name: "float_input"
+    data_type: TYPE_FP32
+    dims: [ -1, 8 ]
+  }
+]
+output [
+  {
+    name: "variable"
+    data_type: TYPE_FP32
+    dims: [ -1, 1 ]
+  }
+]
+instance_group [
+  {
+    count: 1
+    kind: KIND_CPU
+  }
+]
