@@ -77,4 +77,3 @@ instance_group {
 Update the name, input, and output fields to match your specific model.
 
 6. **Copy the ONNX modele**: Copy the ONNX model file you generated earlier to the version directory (1)
-# ai-triton-models
