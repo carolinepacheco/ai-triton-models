@@ -77,3 +77,21 @@ instance_group {
 Update the name, input, and output fields to match your specific model.
 
 6. **Copy the ONNX modele**: Copy the ONNX model file you generated earlier to the version directory (1)
+
+7. **Submitting Inference Requests**: 
+
+With our models now deployed on a running Triton server, let's test them and submit some inferences. 
+
+```bash
+# Step 1: Start the inference container in the same network as the triton service
+# In a separate console, launch the image_client example from the NGC Triton SDK container
+docker run -it --rm --net=host -v ${PWD}/client:/workspace nvcr.io/nvidia/tritonserver:23.02-py3-sdk
+bash
+
+# Step 2: Install the required libraries
+pip install -r requirements.txt 
+
+# Step 3: Execute some inferences related to the model of your choice
+# for example for xgboost run the following script
+python xgboost_inference.py
+```
