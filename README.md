@@ -1,5 +1,25 @@
 # Deploying AI Models on Triton Server
 
+
+This repository provides resources for deploying AI models on Triton Server. The folders contain trained models, converted ONNX models, packaged models, and inference clients.
+
+## Folders
+
+1. **train_model**: This folder contains the trained scikit-learn models in `.model` format. For example, you can find the AdaBoost Regressor model in the `adaboost_regressor.model` file.
+
+2. **convert2onnx**: This folder contains the converted ONNX models for each algorithm. For example, you can find the AdaBoost Regressor ONNX model in the `adaboost_regressor.onnx` file.
+
+3. **triton_model_packaging**: This folder contains the zipped model packages ready for deployment on Triton Server. For example, you can find the AdaBoost Regressor model package in the `adaboost_regressor.zip` file.
+
+4. **model_repository**: Unzip the model package files (e.g., `adaboost_regressor.zip`) into this folder. For example, after unzipping, you can find the AdaBoost Regressor model in the `./adaboost_regressor/` directory.
+
+5. **inference_client**: This folder contains the Python client scripts for submitting inference requests to the deployed models on Triton Server. For example, you can find the AdaBoost Regressor inference client in the `adaboost_regressor_client.py` file.
+
+## Deployment
+
+In order to use these resources, follow the deployment steps mentioned in the tutorial. Make sure to replace the corresponding file names and paths with the ones provided in these folders.
+
+
 Triton Server, formerly known as NVIDIA TensorRT Inference Server, is an open-source inference server designed to deploy machine learning models at scale. It provides a flexible and efficient platform for serving AI models in various deep learning frameworks, such as TensorFlow, PyTorch, ONNX Runtime, and TensorRT. In this tutorial, we will explain how to deploy AI models on Triton Server.
 
 ## Prerequisites
@@ -95,17 +115,3 @@ pip install -r requirements.txt
 # for example for xgboost run the following script
 python xgboost_inference.py
 ```
-
-You can find the necessary resources for deploying your AI models on Triton Server in the provided folders. These folders contain trained models, converted ONNX models, packaged models, and inference clients:
-
-train_model: This folder contains the trained scikit-learn models in .model format. For example, you can find the AdaBoost Regressor model in the adaboost_regressor.model file.
-
-convert2onnx: This folder contains the converted ONNX models for each algorithm. For example, you can find the AdaBoost Regressor ONNX model in the adaboost_regressor.onnx file.
-
-triton_model_packaging: This folder contains the zipped model packages ready for deployment on Triton Server. For example, you can find the AdaBoost Regressor model package in the adaboost_regressor.zip file.
-
-model_repository: Unzip the model package files (e.g., adaboost_regressor.zip) into this folder. For example, after unzipping, you can find the AdaBoost Regressor model in the ./adaboost_regressor/ directory.
-
-inference_client: This folder contains the Python client scripts for submitting inference requests to the deployed models on Triton Server. For example, you can find the AdaBoost Regressor inference client in the adaboost_regressor_client.py file.
-
-In order to use these resources, follow the deployment steps mentioned earlier in this tutorial. Make sure to replace the corresponding file names and paths with the ones provided in these folders.
