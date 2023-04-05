@@ -18,21 +18,21 @@ Before we begin, make sure to install the required packages with specific versio
 
 We will cover the following algorithms in this tutorial:
 
-| Algorithm                              | Dataset                |
-|----------------------------------------|------------------------|
-| Isolation Forest                       | Diabetes               |
-| CatBoost Regressor                     | California Housing     |
-| AdaBoost Regressor                     | California Housing     |
-| Bayesian Ridge                         | California Housing     |
-| Gaussian Naive Bayes                   | Iris                   |
-| Gradient Boosting Regressor            | California Housing     |
-| KMeans                                 | Diabetes               |
-| Linear Regression                      | California Housing     |
-| Logistic Regression                    | Iris                   |
-| One-Class SVM            				          | Diabetes               |
-| Random Forest Regressor   			          | California Housing     |
-| Support Vector Machines                | Iris                   |
-| Support Vector Regression              | California Housing     |
+| Algorithm                              | 
+|----------------------------------------|
+| Isolation Forest                       | 
+| CatBoost Regressor                     |
+| AdaBoost Regressor                     | 
+| Bayesian Ridge                         | 
+| Gaussian Naive Bayes                   | 
+| Gradient Boosting Regressor            | 
+| KMeans                                 |
+| Linear Regression                      | 
+| Logistic Regression                    | 
+| One-Class SVM            				          |
+| Random Forest Regressor   			          |
+| Support Vector Machines                | 
+| Support Vector Regression              | 
 
 # Deploying Models on Triton Server
 
@@ -95,3 +95,17 @@ pip install -r requirements.txt
 # for example for xgboost run the following script
 python xgboost_inference.py
 ```
+
+You can find the necessary resources for deploying your AI models on Triton Server in the provided folders. These folders contain trained models, converted ONNX models, packaged models, and inference clients:
+
+train_model: This folder contains the trained scikit-learn models in .model format. For example, you can find the AdaBoost Regressor model in the adaboost_regressor.model file.
+
+convert2onnx: This folder contains the converted ONNX models for each algorithm. For example, you can find the AdaBoost Regressor ONNX model in the adaboost_regressor.onnx file.
+
+triton_model_packaging: This folder contains the zipped model packages ready for deployment on Triton Server. For example, you can find the AdaBoost Regressor model package in the adaboost_regressor.zip file.
+
+model_repository: Unzip the model package files (e.g., adaboost_regressor.zip) into this folder. For example, after unzipping, you can find the AdaBoost Regressor model in the ./adaboost_regressor/ directory.
+
+inference_client: This folder contains the Python client scripts for submitting inference requests to the deployed models on Triton Server. For example, you can find the AdaBoost Regressor inference client in the adaboost_regressor_client.py file.
+
+In order to use these resources, follow the deployment steps mentioned earlier in this tutorial. Make sure to replace the corresponding file names and paths with the ones provided in these folders.
